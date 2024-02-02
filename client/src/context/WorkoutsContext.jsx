@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+import PropTypes from "prop-types";
 
 export const WorkoutsContext = createContext();
 
@@ -17,7 +18,7 @@ export const workoutsReducer = (state, action) => {
   }
 };
 
-export const WorkoutContextProvider = ({ children }) => {
+export const WorkoutsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(workoutsReducer, {
     workouts: null,
   });
@@ -27,4 +28,8 @@ export const WorkoutContextProvider = ({ children }) => {
       {children}
     </WorkoutsContext.Provider>
   );
+};
+
+WorkoutsContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
