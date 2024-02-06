@@ -1,11 +1,12 @@
+import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import WorkoutModal from "./home/WorkoutModal";
 
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
-
   const handleClick = async () => {
     const response = await fetch(
       "http://localhost:4000/api/workouts/" + workout._id,
