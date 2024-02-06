@@ -1,6 +1,10 @@
 /* google font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* layout */
 :root {
   --primary: #1aac83;
@@ -56,9 +60,20 @@ header a {
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+.workout-details span.delete {
   position: absolute;
   top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.workout-details span.edit {
+  position: absolute;
+  bottom: 20px;
   right: 20px;
   cursor: pointer;
   background: #f1f1f1;
